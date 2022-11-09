@@ -1,6 +1,5 @@
 package connection;
-
-import db.ConnectioinDB;
+import db.ConnectionDB;
 
 import java.io.*;
 import java.net.Socket;
@@ -27,7 +26,7 @@ public class ServerSomething extends Thread{
             out = new BufferedWriter(new OutputStreamWriter(client.getOutputStream()));
             in = new BufferedReader(new InputStreamReader(client.getInputStream()));
 
-            ConnectioinDB conn = new ConnectioinDB(this.client);
+            ConnectionDB conn = new ConnectionDB(this.client);
             conn.getFlag();
 
             Server.addClient(this);
